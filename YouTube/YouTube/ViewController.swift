@@ -8,18 +8,36 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeController: UICollectionViewController,UICollectionViewDelegateFlowLayout{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        navigationItem.title = "Home"
+        
+        collectionView?.backgroundColor = UIColor.whiteColor()
+        
+        self.collectionView?.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
+        //self.collectionView?.registerNib("nil", forCellWithReuseIdentifier: "cellId")
+        //[self.collection registerNib:[UINib nibWithNibName:@"nibname" bundle:nil] forCellWithReuseIdentifier:"cellId"];
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+ 
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
     }
-
-
+//    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+//        return 1
+//    }
+    override func collectionView(collectionView: UICollectionView,
+                                 cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellId", forIndexPath: indexPath) as UICollectionViewCell
+        cell.backgroundColor = UIColor.redColor()
+        return cell
+    }
+    
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+//        return CGSizeMake(view.frame.width, 200)
+//    }
 }
 
