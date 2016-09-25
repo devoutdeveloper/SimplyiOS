@@ -18,16 +18,13 @@ class HomeController: UICollectionViewController,UICollectionViewDelegateFlowLay
         collectionView?.backgroundColor = UIColor.whiteColor()
         
         self.collectionView?.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
-        //self.collectionView?.registerNib("nil", forCellWithReuseIdentifier: "cellId")
-        //[self.collection registerNib:[UINib nibWithNibName:@"nibname" bundle:nil] forCellWithReuseIdentifier:"cellId"];
+      
     }
  
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
-//    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-//        return 1
-//    }
+    
     override func collectionView(collectionView: UICollectionView,
                                  cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
@@ -36,8 +33,8 @@ class HomeController: UICollectionViewController,UICollectionViewDelegateFlowLay
         return cell
     }
     
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//        return CGSizeMake(view.frame.width, 200)
-//    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSizeMake(view.frame.width, 200)
+    }
 }
 
