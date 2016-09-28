@@ -65,7 +65,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
-        mapView.showsUserLocation = true
+        //mapView.showsUserLocation = true
         
         if CLLocationManager.locationServicesEnabled() {
            
@@ -76,10 +76,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
         
-        
+        //let locValue:CLLocationCoordinate2D = locationManager.location!.coordinate
         
         let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+        
+        // Call stopUpdatingLocation() to stop listening for location updates,
+        // other wise this function will be called every time when user location changes.
+        locationManager.stopUpdatingLocation()
+
+        
         
         mapView.setRegion(region, animated: true)
         
@@ -88,10 +95,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         myAnnotation.coordinate = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude);
         myAnnotation.title = "Current location"
         mapView.addAnnotation(myAnnotation)
-        // Call stopUpdatingLocation() to stop listening for location updates,
-        // other wise this function will be called every time when user location changes.
-        //locationManager.stopUpdatingLocation()
-    }
+            }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
     {

@@ -526,6 +526,7 @@
 				21C59EDF1D9C619F00369403 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21C59EE01D9C619F00369403 /* Build configuration list for PBXNativeTarget "MapwithLocationVJTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +535,7 @@
 				21C59EE21D9C619F00369403 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21C59EE31D9C619F00369403 /* Build configuration list for PBXNativeTarget "MapwithLocationVJUITests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +544,7 @@
 				21C59EE51D9C619F00369403 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
